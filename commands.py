@@ -1,5 +1,5 @@
 import argparse
-from DbOperations import fetch_all_users, fetch_all_orders, add_user, add_order
+from DbOperations import fetch_all_users, fetch_all_orders, add_user, add_order, update_user, update_order
 from report import generate_report
 
 def parse_args():
