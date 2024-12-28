@@ -17,6 +17,18 @@ def parse_args():
     add_order_parser.add_argument("--item", required=True, help="Name of the item")
     add_order_parser.add_argument("--price", required=True, type=float, help="Price of the item")
 
+    # Update user
+    update_user_parser = subparsers.add_parser("update-user")
+    update_user_parser.add_argument("--id", required=True, type=int, help="ID of the user to update")
+    update_user_parser.add_argument("--name", help="New name of the user")
+    update_user_parser.add_argument("--email", help="New email of the user")
+
+    # Update order
+    update_order_parser = subparsers.add_parser("update-order")
+    update_order_parser.add_argument("--id", required=True, type=int, help="ID of the order to update")
+    update_order_parser.add_argument("--item", help="New item name")
+    update_order_parser.add_argument("--price", type=float, help="New price of the item")
+
     # Fetch data
     subparsers.add_parser("list-users")
     subparsers.add_parser("list-orders")
@@ -44,5 +56,11 @@ def execute_command(args):
         print("Orders:")
         for order in orders:
             print(f"ID: {order[0]}, User ID: {order[1]}, Item: {order[2]}, Price: {order[3]}")
+    elif args.command == "update-user":
+        update_user(args.id, args.name, args.email)
+        print(f"User ID {args.id} updated successfully!")
+    elif args.command == "update-order":
+        update_order(args.id, args.item, args.price)
+        print(f"Order ID {args.id} updated successfully!")
     elif args.command == "generate-report":
         generate_report(args.type)

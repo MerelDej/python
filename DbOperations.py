@@ -36,3 +36,23 @@ def add_order(user_id, item, price):
     cursor.execute("INSERT INTO orders (user_id, item, price) VALUES (?, ?, ?)", (user_id, item, price))
     conn.commit()
     conn.close()
+
+def update_user(user_id, new_name=None, new_email=None):
+    conn = connect_db()
+    cursor = conn.cursor()
+    if new_name:
+        cursor.execute("UPDATE users SET name = ? WHERE id = ?", (new_name, user_id))
+    if new_email:
+        cursor.execute("UPDATE users SET email = ? WHERE id = ?", (new_email, user_id))
+    conn.commit()
+    conn.close()
+
+def update_order(order_id, new_item=None, new_price=None):
+    conn = connect_db()
+    cursor = conn.cursor()
+    if new_item:
+        cursor.execute("UPDATE orders SET item = ? WHERE id = ?", (new_item, order_id))
+    if new_price is not None:
+        cursor.execute("UPDATE orders SET price = ? WHERE id = ?", (new_price, order_id))
+    conn.commit()
+    conn.close()
