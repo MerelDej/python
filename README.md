@@ -1,6 +1,6 @@
 # python
 With this project you can read a database and add or change data.
-This database is built for a store where it can store its users and their orders.
+This database is built for a store where it can store its userdata and their orders.
 
 Contents:
 - CreateDatabase.py (in the "DatabaseCreate" folder)
