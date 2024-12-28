@@ -35,7 +35,7 @@ def parse_args():
 
     # Generate report
     report_parser = subparsers.add_parser("generate-report")
-    report_parser.add_argument("--type", choices=["csv", "excel"], default="csv", help="Type of report to generate")
+    report_parser.add_argument("--type", required=True, choices=["csv", "excel"], help="Type of report to generate")
 
     return parser.parse_args()
 

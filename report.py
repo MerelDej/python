@@ -3,7 +3,7 @@ import sqlite3
 import os
 from settings.config import DB_PATH
 
-def generate_report(file_type="csv"):
+def generate_report(file_type):
     conn = sqlite3.connect(DB_PATH)
     query = """
     SELECT users.name AS User, orders.item AS Item, orders.price AS Price
