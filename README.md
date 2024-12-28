@@ -5,7 +5,7 @@ This database is built for a store where it can store its userdata and their ord
 Contents:
 - CreateDatabase.py (in the "DatabaseCreate" folder)
   - If there are any problems with the download of the database from Toledo, you can make it with this.
-  - WARNING: move the database after creation out of the "DatabaseCreate" directory!
+  - WARNING: Move the database after creation out of the "DatabaseCreate" directory and into the project folder!
 - Config.py (in the "settings" folder)
   - Here you can find the path for the database.
 - .gitignore
